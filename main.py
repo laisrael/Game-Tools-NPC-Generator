@@ -4,7 +4,7 @@ import racegen, namegen, statgen, classgen, featgen
 #Consolidate results and determine the final character
 def main(inlevel, inrace='rand', inname='rand', instats='rand', inclass='rand', infeats='rand',):
 	myrace = racegen.generate(inrace)
-	myname = namegen.generate(inname)
+	myname = namegen.generate(inname, myrace.lower())
 	mystats = statgen.generate(instats, inlevel)
 	myclass = classgen.generate(inclass)
 	myfeats = featgen.generate(inrace, inclass, infeats, inlevel)
