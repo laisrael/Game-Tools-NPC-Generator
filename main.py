@@ -5,13 +5,14 @@ import racegen, namegen, statgen, classgen, featgen
 def main(inlevel, inrace='rand', inname='rand', instats='rand', inclass='rand', infeats='rand',):
 	myrace = racegen.generate(inrace)
 	myname = namegen.generate(inname, myrace.lower())
+	myclass, statpref = classgen.generate(inclass)
 	mystats = statgen.generate(instats, inlevel)
-	myclass = classgen.generate(inclass)
 	myfeats = featgen.generate(inrace, inclass, infeats, inlevel)
 	print("Your race is: " + myrace)
 	print("Your name is: " + myname)
 	print("Your stats are: " + mystats)
 	print("Your class is: " + myclass)
+	print("This is a test, your stat priority is; " + str(statpref))
 	print("Your feats are: ")
 	for i in myfeats:
 		print(i)

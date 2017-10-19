@@ -35,6 +35,7 @@ def generate(inname, myrace):
 			 'Khum Moltenpunch', 'Ye Byklud', 'So Deeppunch', 'Tim Beth', 'Ra Coldgem', 'Ghulgwas Ghamryd', 'Kivull Stoneflow', 'Ongu Bryngodd', 'Nuddal Embersurge', 'Gevlir Srob'
 			]
 	if inname == "rand":
+		#Needs to be changed to pick correct racial/gender names
 		name = random.choice(names)
 	else:
 		#Currently only supports Core Races
