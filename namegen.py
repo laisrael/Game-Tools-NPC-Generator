@@ -1,9 +1,20 @@
 import random
 
-def generate(inname, myrace):
+def generate(inname, ingender, myrace):
+
 	#Proof of concept using a list for now, need to find a way to generate
 	#names en-masse and either create them on the fly or put a bunch in a DB
-	#Also, an androgynous set of names would be nice
+
+	#Also, an androgynous set of names would be nice, but for now just choose
+	#randomly between male and female names
+
+	genders = [
+	#Weighted to allow for a 1/40 chance of a non-binary NPC, a 20/40 chance
+	#of a female NPC, and a 19/40 chance of a male NPC.
+			 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male', 'male',
+			 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female', 'female',
+			 'non-binary']
+	gender = random.choice(genders)
 	names = [
 			 #human males 
 			 'Kharmat', 'Dalba', 'Tegvith Palewolf', 'Sunfrarg Windlash', 'Kornik Distant', 'Borne Ukiddr', 'Sirliam Iggo', 'Hellmem Vusha', 'Jurut Shamikh', 'Were Samam', 'Unkheif Meizghar', 'Sinkhau Suhif',
@@ -36,8 +47,13 @@ def generate(inname, myrace):
 			]
 	if inname == "rand":
 		#Needs to be changed to pick correct racial/gender names
-		name = random.choice(names)
+		if ingender == 'female':
+			name = random.choice(names)
+		elif ingender == 'male':
+			name = random.choice(names)
+		else:
+			name = random.choice(names)
 	else:
 		#Currently only supports Core Races
 		name = inname
-	return name
+	return (name, gender)
