@@ -22,6 +22,8 @@ def generate(inname, ingender, myrace):
 
 			#Eventually make separate lists for each race
 
+			#Currently only supports Core Races
+
 			#human males 
 			'Kharmat', 'Dalba', 'Tegvith Palewolf', 'Sunfrarg Windlash', 'Kornik Distant', 'Borne Ukiddr', 'Sirliam Iggo', 'Hellmem Vusha', 'Jurut Shamikh', 'Were Samam', 'Unkheif Meizghar', 'Sinkhau Suhif',
 			#human females
@@ -105,6 +107,5 @@ def generate(inname, ingender, myrace):
 		else:
 			myname = random.choice(names)
 	else:
-		#Currently only supports Core Races
 		myname = inname
 	return (myname, mygender)
