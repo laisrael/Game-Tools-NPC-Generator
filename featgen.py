@@ -1,4 +1,4 @@
 import random
 
-def generate(inrace, inclass, infeats, inlevel):
+def generate(myrace, myclass, mystats, infeats, inlevel):
 	return ['Just', 'testing', 'for', 'now!']

@@ -3,11 +3,12 @@ import racegen, namegen, statgen, classgen, featgen
 
 #Consolidate results and determine the final character
 def main(inlevel, inrace='rand', inname='rand', ingender='rand', instats='rand', inclass='rand', infeats='rand',):
-	myrace = racegen.generate(inrace)
+	myrace, racestats = racegen.generate(inrace)
 	myname, mygender = namegen.generate(inname, ingender, myrace.lower())
 	myclass, statpref = classgen.generate(inclass)
-	mystats = statgen.generate(instats, inlevel)
-	myfeats = featgen.generate(inrace, inclass, infeats, inlevel)
+	mystats = statgen.generate(instats, inlevel, racestats, statpref)
+	myfeats = featgen.generate(myrace, myclass, mystats, infeats, inlevel)
+	myskills = "Implementation Needed"
 	print("Your race is: " + myrace)
 	print("Your name is: " + myname)
 	print("Your gender is: " + mygender.title())
@@ -17,5 +18,6 @@ def main(inlevel, inrace='rand', inname='rand', ingender='rand', instats='rand',
 	print("Your feats are: ")
 	for i in myfeats:
 		print(i)
+	print("Your skills are: " + myskills)
 
 main(10)
