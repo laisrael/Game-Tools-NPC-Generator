@@ -1,7 +1,7 @@
 import random
 
 #Implement separate lists for the core races vs. special races
-races = [("Dwarf", "+2 CON;+2 WIS;-2 CHA"), ("Elf", "+2 DEX;+2 INT;-2 CON"), ("Gnome", "+2 CON;+2 CHA;-2 STR"), ("Half-Elf", "ANY"), ("Half-Orc", "ANY"), ("Halfling", "+2 DEX;+2 CHA;-2 STR"), ("Human", "ANY")]
+races = [("Dwarf", "+CON;+WIS;-CHA"), ("Elf", "+DEX;+INT;-CON"), ("Gnome", "+CON;+CHA;-STR"), ("Half-Elf", "ANY"), ("Half-Orc", "ANY"), ("Halfling", "+DEX;+CHA;-STR"), ("Human", "ANY")]
 
 def generate(inrace):
 	if inrace == "rand":

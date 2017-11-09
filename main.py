@@ -12,9 +12,8 @@ def main(inlevel, inrace='rand', inname='rand', ingender='rand', instats='rand',
 	print("Your race is: " + myrace)
 	print("Your name is: " + myname)
 	print("Your gender is: " + mygender.title())
-	print("Your stats are: " + mystats)
+	print("Your stats are: " + str(mystats))
 	print("Your class is: " + myclass)
-	print("This is a test, your stat priority is; " + str(statpref))
 	print("Your feats are: ")
 	for i in myfeats:
 		print(i)
