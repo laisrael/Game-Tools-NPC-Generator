@@ -7,11 +7,23 @@ def generate(myrace, myclass, mystats, infeats, inlevel):
 
 	# elif myclass == "Barbarian":
 	# 	#Barbarian strength build
-
+			#Human Bonus Feat) Toughness
+			#1) Power Attack
+			#3) Improved Initiative
+			#5) Endurance
+			#7) Diehard
+			#9) Improved Critical (main weapon)
+			#11) Sickening Critical
+			#13) Staggering Critical
+			#15) Blinding Critical
+			#17) Stunning Critical
+			#19) Heroic Defiance
+			
 		#TO ADD
 		#Barbarian archer build
 		#Barbarian mounted build
 		#Totem barbarian build
+		#Invulnerable rager barbarian build (uses Stalwart, tank build)
 
 	# elif myclass == "Bard":
 	# 	#Bard casting build
