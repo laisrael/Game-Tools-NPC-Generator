@@ -2,11 +2,16 @@ import random
 
 def generate(myrace, myclass, mystats, infeats, inlevel):
 
-	# if infeats != "rand":
-	# 	return infeats
+	if infeats != "rand":
+		return infeats
 
 	# elif myclass == "Barbarian":
 	# 	#Barbarian strength build
+
+		#TO ADD
+		#Barbarian archer build
+		#Barbarian mounted build
+		#Totem barbarian build
 
 	# elif myclass == "Bard":
 	# 	#Bard casting build
@@ -38,7 +43,6 @@ def generate(myrace, myclass, mystats, infeats, inlevel):
 	# elif myclass == "Wizard":
 	# 	#Wizard squishy control mage build
 
-	# else:
-	# 	#Account for input classes here, make an educated guess about feats based on stats
-
-	return ['Just', 'testing', 'for', 'now!']
+	else:
+		return ['Just', 'testing', 'for', 'now!']
+		#Account for input classes here, make an educated guess about feats based on stats
