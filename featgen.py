@@ -32,6 +32,7 @@ def generate(myrace, myclass, mystats, infeats, inlevel):
 		#Bard archer build
 		#Bard melee build
 	# 	#Bard casting build
+		#Bard social build
 
 	# elif myclass == "Cleric":
 		#Cleric bruiser build
@@ -56,19 +57,35 @@ def generate(myrace, myclass, mystats, infeats, inlevel):
 		#Monk switch hitter build
 
 	# elif myclass == "Paladin":
-	# 	#Paladin bruiser build
+	# 	#Paladin social build
+		#Paladin tank build
+		#Paladin melee smite build
+		#Paladin ranged smite build
 
 	# elif myclass == "Ranger":
-	# 	#Ranger strength build
+	# 	#Ranger archer build
+		#Ranger TWF build
+		#Ranger switch hitter build
 
 	# elif myclass == "Rogue":
-	# 	#Rogue Dexterity assassin build
+	# 	#Rogue TWF build
+		#Rogue social build
+		#Rogue THF build
+		#Rogue archery build
 
 	# elif myclass == "Sorcerer":
-	# 	#Sorcerer squishy control mage build
+	# 	#Sorcerer utility build
+		#Sorcerer blast build
+		#Sorcerer mixed build
+
 
 	# elif myclass == "Wizard":
-	# 	#Wizard squishy control mage build
+	# 	#Wizard control build
+		#Wizard debuff build
+		#Wizard buff build
+		#Wizard save or die build
+		#Wizard blast build
+		#Wizard summoning build
 
 	else:
 		return ['Just', 'testing', 'for', 'now!']
