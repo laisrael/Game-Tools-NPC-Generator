@@ -26,19 +26,34 @@ def generate(myrace, myclass, mystats, infeats, inlevel):
 		#Invulnerable rager barbarian build (uses Stalwart, tank build)
 
 	# elif myclass == "Bard":
+
+		#TO ADD
+		#Bard controller build
+		#Bard archer build
+		#Bard melee build
 	# 	#Bard casting build
 
 	# elif myclass == "Cleric":
-	# 	#Cleric bruiser build
+		#Cleric bruiser build
+		#Cleric caster build
 
 	# elif myclass == "Druid":
 	# 	#Druid bruiser build
+		#Druid archetypes?
 
 	# elif myclass == "Fighter":
-	# 	#Fighter melee strength build
+	# 	#Fighter 2h build
+		#Fighter archery build
+		#Fighter mounted build
+		#Fighter OHF build
+		#Fighter THF build
+		#Fighter sword and board build
 
 	# elif myclass == "Monk":
-	# 	#Monk melee strength build
+	# 	#Monk unarmed build
+		#Monk armed build
+		#Monk ranged build
+		#Monk switch hitter build
 
 	# elif myclass == "Paladin":
 	# 	#Paladin bruiser build
