@@ -10,7 +10,6 @@ def generate(instats, inlevel, racestats, statpref):
 
 		#GENERATION
 
-		#Randomly generate stat numbers
 		statNums = []
 		finalStats = []
 		i = 0

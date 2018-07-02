@@ -88,5 +88,5 @@ def generate(myrace, myclass, mystats, infeats, inlevel):
 		#Wizard summoning build
 
 	else:
-		return ['Just', 'testing', 'for', 'now!']
+		return ["Implementation", "Needed"]
 		#Account for input classes here, make an educated guess about feats based on stats

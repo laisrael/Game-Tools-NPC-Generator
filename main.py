@@ -1,8 +1,15 @@
 import racegen, namegen, statgen, classgen, featgen
-#Add item generation later
 
 #Consolidate results and determine the final character
-def main(inlevel, inrace='rand', inname='rand', ingender='rand', instats='rand', inclass='rand', infeats='rand',):
+def main():
+	inlevel = int(input("What level should your NPC be?"))
+	inrace = input("What race should your NPC be? If you would like their race to be random, enter \"rand\"")
+	inname = input("What is your NPC's name? If you would like their name to be random, enter \"rand\"")
+	ingender = input("What is your NPC's gender? If you would like their gender to be random, enter \"rand\"")
+	instats = input("What are your NPC's stats? Enter their stats as an array of the following format: [STR, DEX, CON, INT, WIS, CHA]\nIf you would like their stats to be random, enter \"rand\"")
+	inclass = input("What is your NPC's class? If you would like their class to be random, enter \"rand\"")
+	infeats = input("What are your NPC's feats? Enter their feats as an array of the following format: [Feat 1, Feat 2, ... , Feat n]\nIf you would like their feats to be random, enter \"rand\"")
+
 	myrace, racestats = racegen.generate(inrace)
 	myname, mygender = namegen.generate(inname, ingender, myrace.lower())
 	myclass, statpref = classgen.generate(inclass)
@@ -19,4 +26,4 @@ def main(inlevel, inrace='rand', inname='rand', ingender='rand', instats='rand',
 		print(i)
 	print("Your skills are: " + myskills)
 
-main(10)
+main()
