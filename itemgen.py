@@ -1,3 +1,5 @@
+#This part of the tool is not yet implemented.
+
 # IMPORTANT ITEMS FOR CLASSES:
 
 # Barbarian:

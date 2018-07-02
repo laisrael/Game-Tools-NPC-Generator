@@ -6,6 +6,7 @@ def generate(inclass):
     if inclass != "rand":
         return inclass
     else:
+        #Classes are returned with a list of stats in order of where they will allocate stat points, from highest to lowest.
         classes = [
                    ('Barbarian', ['STR', 'CON', 'DEX', 'WIS', 'CHA', 'INT']),
                    ('Bard', ['CHA', 'CON', 'STR', 'DEX', 'WIS', 'INT']),
