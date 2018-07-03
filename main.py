@@ -42,7 +42,7 @@ class NPC():
 			self.inSkills = input("What are your NPC's skills? Enter their skills as a list of the following format: [(Skill 1, Number of Points), (Skill 2, Number of Points), ...]\nIf you would like their skills to be random, enter \"rand\" ")
 		
 		elif prompt == "Yes":
-			self.inLevel = int(input("What level is your NPC?"))
+			self.inLevel = int(input("What level is your NPC? "))
 			self.inRace = "rand"
 			self.inName = "rand"
 			self.inGender = "rand"
@@ -57,21 +57,28 @@ class NPC():
 
 	def gen_race(self):
 		self.finalRace, self.raceStats = racegen.generate(self.inRace)
+		print("Your NPC's race is: " + self.finalRace)
 
 	def gen_name(self):
 		self.finalName, self.finalGender = namegen.generate(self.inName, self.inGender, self.finalRace.lower())
+		print("Your NPC's name is: " + self.finalName)
+		print("Your NPC's gender is: " + self.finalGender.title())
 
 	def gen_class(self):
 		self.finalClass, self.statPref = classgen.generate(self.inClass)
+		print("Your NPC's class is: " + self.finalClass)
 
 	def gen_stats(self):
 		self.finalStats = statgen.generate(self.inStats, self.inLevel, self.raceStats, self.statPref)
+		print("Your NPC's stats are: " + str(self.finalStats))
 
 	def gen_feats(self):
 		self.finalFeats = featgen.generate(self.finalRace, self.finalClass, self.finalStats, self.inFeats, self.inLevel)
+		print("Your NPC's feats are: " + str(self.finalFeats))
 
 	def gen_skills(self):
 		self.finalSkills = skillgen.generate(self.finalStats, self.finalClass, self.inSkills)
+		print("Your NPC's skills are: " + self.finalSkills)	
 
 
 	def create(self):
@@ -81,15 +88,7 @@ class NPC():
 		self.gen_class()
 		self.gen_stats()
 		self.gen_feats()
-		self.gen_skills()
-
-		print("Your NPC's race is: " + self.finalRace)
-		print("Your NPC's name is: " + self.finalName)
-		print("Your NPC's gender is: " + self.finalGender.title())
-		print("Your NPC's stats are: " + str(self.finalStats))
-		print("Your NPC's class is: " + self.finalClass)
-		print("Your NPC's feats are: " + str(self.finalFeats))
-		print("Your NPC's skills are: " + self.finalSkills)	
+		self.gen_skills()		
 
 npc = NPC()
 npc.create()
