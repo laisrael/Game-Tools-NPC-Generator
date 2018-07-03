@@ -60,7 +60,7 @@ class NPC():
 		print("Your NPC's race is: " + self.finalRace)
 
 	def gen_name(self):
-		self.finalName, self.finalGender = namegen.generate(self.inName, self.inGender, self.finalRace.lower())
+		self.finalName, self.finalGender = namegen.generate(self.inName, self.inGender, self.finalRace)
 		print("Your NPC's name is: " + self.finalName)
 		print("Your NPC's gender is: " + self.finalGender.title())
 
