@@ -35,11 +35,11 @@ genders = [
 #Also, an androgynous set of names would be nice, but for now just choose
 #randomly between male and female names
 
-class Race(): 
-	def __init__(self, inName, inGender):
+class Name():
+	def __init__(self, inName, inGender, finalRace):
 		self.finalName = inName
 		self.finalGender = inGender
-
+		self.finalRace = finalRace
 
 	def get_gender(self):
 		if self.finalGender == 'rand':
@@ -55,7 +55,13 @@ class Race():
 		else:
 			self.finalName = random.choice(humanMales + humanFemales + halfingMales + halflingFemales + halforcMales + halforcFemales + halfelfMales + halfelfFemales + gnomeMales + gnomeFemales + elfMales + elfFemales + dwarfMales + dwarfFemales)
 
-class Human(Race):
+	def generate(self):
+		self.get_gender()
+		self.get_name()
+
+		return (self.finalName, self.finalGender)
+
+class HumanName(Name):
 	def get_name(self):
 		if self.finalName != 'rand':
 			pass
@@ -66,7 +72,7 @@ class Human(Race):
 		else:
 			self.finalName = random.choice((humanMales + humanFemales))
 
-class Halfling(Race):
+class HalflingName(Name):
 	def get_name(self):
 		if self.finalName != 'rand':
 			pass
@@ -77,7 +83,7 @@ class Halfling(Race):
 		else:
 			self.finalName = random.choice(halflingMales + halflingFemales)
 
-class HalfOrc(Race):
+class HalfOrcName(Name):
 	def get_name(self):
 		if self.finalName != 'rand':
 			pass
@@ -88,18 +94,18 @@ class HalfOrc(Race):
 		else:
 			self.finalName = random.choice(halforcMales + halforcFemales)
 
-class HalfElf(Race):
+class HalfElfName(Name):
 	def get_name(self):
 		if self.finalName != 'rand':
 			pass
 		elif self.finalGender == 'male':
-			self.finalName = random.choice(halfelfMales)
+			self.finalName = random.choice(HalfElfMales)
 		elif self.finalGender == 'female':
 			self.finalName = random.choice(halfelfFemales)
 		else:
 			self.finalName = random.choice(halfelfMales + halfelfFemales)
 
-class Gnome(Race):
+class GnomeName(Name):
 	def get_name(self):
 		if self.finalName != 'rand':
 			pass
@@ -110,7 +116,7 @@ class Gnome(Race):
 		else:
 			self.finalName = random.choice(gnomeMales + gnomeFemales)
 
-class Elf(Race):
+class ElfName(Name):
 	def get_name(self):
 		if self.finalName != 'rand':
 			pass
@@ -121,7 +127,7 @@ class Elf(Race):
 		else:
 			self.finalName = random.choice(elfMales + elfFemales)
 
-class Dwarf(Race):
+class DwarfName(Name):
 	def get_name(self):
 		if self.finalName != 'rand':
 			pass
@@ -131,33 +137,3 @@ class Dwarf(Race):
 			self.finalName = random.choice(dwarfFemales)
 		else:
 			self.finalName = random.choice(dwarfMales + dwarfFemales)
-
-def generate(inName, inGender, finalRace):
-	if finalRace == "Human":
-		race = Human(inName, inGender)
-
-	elif finalRace == "Halfling":
-		race = Halfling(inName, inGender)
-
-	elif finalRace == "Half-Orc":
-		race = HalfOrc(inName, inGender)
-
-	elif finalRace == "Half-Elf":
-		race = HalfElf(inName, inGender)
-
-	elif finalRace == "Gnome":
-		race = Gnome(inName, inGender)
-
-	elif finalRace == "Elf":
-		race = Elf(inName, inGender)
-
-	elif finalRace == "Dwarf":
-		race = Dwarf(inName, inGender)
-
-	else:
-		race = Race(inName, inGender)
-
-	race.get_gender()
-	race.get_name()
-
-	return (race.finalName, race.finalGender)

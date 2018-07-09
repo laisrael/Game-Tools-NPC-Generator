@@ -38,9 +38,9 @@ class NPC():
 			self.inGender = input("What is your NPC's gender? If you would like their gender to be random, enter \"rand\" ")
 			self.inStats = input("What are your NPC's stats? Enter their stats as a list of the following format: [STR, DEX, CON, INT, WIS, CHA]\nIf you would like their stats to be random, enter \"rand\" ")
 			self.inClass = input("What is your NPC's class? If you would like their class to be random, enter \"rand\" ")
-			self.inFeats = input("What are your NPC's feats? Enter their feats as a list of the following format: [Feat 1, Feat 2, ...]\nIf you would like their feats to be random, enter \"rand\" ")		
+			self.inFeats = input("What are your NPC's feats? Enter their feats as a list of the following format: [Feat 1, Feat 2, ...]\nIf you would like their feats to be random, enter \"rand\" ")
 			self.inSkills = input("What are your NPC's skills? Enter their skills as a list of the following format: [(Skill 1, Number of Points), (Skill 2, Number of Points), ...]\nIf you would like their skills to be random, enter \"rand\" ")
-		
+
 		elif prompt == "Yes":
 			self.inLevel = int(input("What level is your NPC? "))
 			self.inRace = "rand"
@@ -60,7 +60,33 @@ class NPC():
 		print("Your NPC's race is: " + self.finalRace)
 
 	def gen_name(self):
-		self.finalName, self.finalGender = namegen.generate(self.inName, self.inGender, self.finalRace)
+
+		if self.finalRace == "Human":
+			name = namegen.HumanName(self.inName, self.inGender, self.finalRace)
+
+		elif self.finalRace == "Halfling":
+			name = namegen.HalflingName(self.inName, self.inGender, self.finalRace)
+
+		elif self.finalRace == "Half-Orc":
+			name = namegen.HalfOrcName(self.inName, self.inGender, self.finalRace)
+
+		elif self.finalRace == "Half-Elf":
+			name = namegen.HalfElfName(self.inName, self.inGender, self.finalRace)
+
+		elif self.finalRace == "Gnome":
+			name = namegen.GnomeName(self.inName, self.inGender, self.finalRace)
+
+		elif self.finalRace == "Elf":
+			name = namegen.ElfName(self.inName, self.inGender, self.finalRace)
+
+		elif self.finalRace == "Dwarf":
+			name = namegen.DwarfName(self.inName, self.inGender, self.finalRace)
+
+		else:
+			name = namegen.Name(self.inName, self.inGender, self.finalRace)
+
+		self.finalName, self.finalGender = name.generate()
+
 		print("Your NPC's name is: " + self.finalName)
 		print("Your NPC's gender is: " + self.finalGender.title())
 
@@ -78,8 +104,7 @@ class NPC():
 
 	def gen_skills(self):
 		self.finalSkills = skillgen.generate(self.finalStats, self.finalClass, self.inSkills)
-		print("Your NPC's skills are: " + self.finalSkills)	
-
+		print("Your NPC's skills are: " + self.finalSkills)
 
 	def create(self):
 		self.get_inputs()
@@ -88,7 +113,7 @@ class NPC():
 		self.gen_class()
 		self.gen_stats()
 		self.gen_feats()
-		self.gen_skills()		
+		self.gen_skills()
 
 npc = NPC()
 npc.create()
