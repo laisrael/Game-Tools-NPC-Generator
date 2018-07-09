@@ -14,13 +14,13 @@ classes = [
     ('Wizard', ['INT', 'CON', 'DEX', 'WIS', 'CHA', 'STR'])
     ]
 
-def generate(inClass):
-    #Using core classes only for proof of concept
-    #Does not account for the flexibility between STR/DEX choices
-    if inClass != "rand":
-        return inClass
-    else:
-        #Classes are returned with a list of stats in order of where they will allocate stat points, from highest to lowest.
+class Class():
+    def __init__(self, inClass):
+        if inClass == "rand":
+            #Classes are returned with a list of stats in order of where they will allocate stat points, from highest to lowest.
+            self.finalClass, self.statPref = random.choice(classes)
+        else:
+            self.finalClass, self.statPref = inClass
 
-        finalClass = random.choice(classes)
-        return finalClass
+    def generate(self):
+        return (self.finalClass, self.statPref)
