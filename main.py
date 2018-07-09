@@ -33,7 +33,7 @@ class NPC():
 
 		if prompt == "No":
 			self.inLevel = int(input("What level is your NPC? "))
-			self.inRace = input("What race is your NPC? If you would like their race to be random, enter \"rand\" ")
+			self.inRace = input("What is your NPC's race? Enter their race as a list of the following format: ('race name', '+stat 1 (ex. STR);+stat 2 (ex. DEX);-stat' OR 'ANY')If you would like their race to be random, enter \"rand\" ")
 			self.inName = input("What is your NPC's name? If you would like their name to be random, enter \"rand\" ")
 			self.inGender = input("What is your NPC's gender? If you would like their gender to be random, enter \"rand\" ")
 			self.inStats = input("What are your NPC's stats? Enter their stats as a list of the following format: [STR, DEX, CON, INT, WIS, CHA]\nIf you would like their stats to be random, enter \"rand\" ")
@@ -56,7 +56,11 @@ class NPC():
 			self.get_inputs()
 
 	def gen_race(self):
-		self.finalRace, self.raceStats = racegen.generate(self.inRace)
+
+		race = racegen.Race(self.inRace)
+
+		self.finalRace, self.raceStats = race.generate()
+		
 		print("Your NPC's race is: " + self.finalRace)
 
 	def gen_name(self):

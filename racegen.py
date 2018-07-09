@@ -10,3 +10,14 @@ def generate(inrace):
 		#Currently only supports Core Races
 		race = inrace
 	return race
+
+class Race():
+    def __init__(self, inRace):
+        if inRace == "rand":
+            #Classes are returned with a list of stats in order of where they will allocate stat points, from highest to lowest.
+            self.finalRace, self.raceStats = random.choice(races)
+        else:
+            self.finalRace, self.raceStats = inRace
+
+    def generate(self):
+        return (self.finalRace, self.raceStats)
