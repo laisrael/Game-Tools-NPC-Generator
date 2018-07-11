@@ -99,7 +99,7 @@ class HalfElfName(Name):
 		if self.finalName != 'rand':
 			pass
 		elif self.finalGender == 'male':
-			self.finalName = random.choice(HalfElfMales)
+			self.finalName = random.choice(halfelfMales)
 		elif self.finalGender == 'female':
 			self.finalName = random.choice(halfelfFemales)
 		else:
