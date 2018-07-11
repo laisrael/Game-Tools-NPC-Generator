@@ -56,15 +56,10 @@ class NPC():
 			self.get_inputs()
 
 	def gen_race(self):
-
 		race = racegen.Race(self.inRace)
-
 		self.finalRace, self.raceStats = race.generate()
 
-		print("Your NPC's race is: " + self.finalRace)
-
 	def gen_name(self):
-
 		if self.finalRace == "Human":
 			name = namegen.HumanName(self.inName, self.inGender, self.finalRace)
 
@@ -91,29 +86,27 @@ class NPC():
 
 		self.finalName, self.finalGender = name.generate()
 
-		print("Your NPC's name is: " + self.finalName)
-		print("Your NPC's gender is: " + self.finalGender.title())
-
 	def gen_class(self):
 		myclass = classgen.Class(self.inClass)
-
 		self.finalClass, self.statPref = myclass.generate()
-
-		print("Your NPC's class is: " + self.finalClass)
 
 	def gen_stats(self):
 		stats = statgen.Stats(self.inStats, self.inLevel, self.raceStats, self.statPref)
-
 		self.finalStats = stats.generate()
-		#self.finalStats = statgen.generate(self.inStats, self.inLevel, self.raceStats, self.statPref)
-		print("Your NPC's stats are: " + str(self.finalStats))
 
 	def gen_feats(self):
 		self.finalFeats = featgen.generate(self.finalRace, self.finalClass, self.finalStats, self.inFeats, self.inLevel)
-		print("Your NPC's feats are: " + str(self.finalFeats))
 
 	def gen_skills(self):
 		self.finalSkills = skillgen.generate(self.finalStats, self.finalClass, self.inSkills)
+
+	def print_npc(self):
+		print("Your NPC's race is: " + self.finalRace)
+		print("Your NPC's name is: " + self.finalName)
+		print("Your NPC's gender is: " + self.finalGender.title())
+		print("Your NPC's class is: " + self.finalClass)
+		print("Your NPC's stats are: " + str(self.finalStats))
+		print("Your NPC's feats are: " + str(self.finalFeats))
 		print("Your NPC's skills are: " + self.finalSkills)
 
 	def create(self):
@@ -124,6 +117,7 @@ class NPC():
 		self.gen_stats()
 		self.gen_feats()
 		self.gen_skills()
+		self.print_npc()
 
 npc = NPC()
 npc.create()
