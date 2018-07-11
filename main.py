@@ -60,7 +60,7 @@ class NPC():
 		race = racegen.Race(self.inRace)
 
 		self.finalRace, self.raceStats = race.generate()
-		
+
 		print("Your NPC's race is: " + self.finalRace)
 
 	def gen_name(self):
@@ -102,7 +102,10 @@ class NPC():
 		print("Your NPC's class is: " + self.finalClass)
 
 	def gen_stats(self):
-		self.finalStats = statgen.generate(self.inStats, self.inLevel, self.raceStats, self.statPref)
+		stats = statgen.Stats(self.inStats, self.inLevel, self.raceStats, self.statPref)
+
+		self.finalStats = stats.generate()
+		#self.finalStats = statgen.generate(self.inStats, self.inLevel, self.raceStats, self.statPref)
 		print("Your NPC's stats are: " + str(self.finalStats))
 
 	def gen_feats(self):
