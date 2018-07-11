@@ -33,7 +33,7 @@ genders = [
 #names en-masse and either create them on the fly or put a bunch in a DB
 
 #Also, an androgynous set of names would be nice, but for now just choose
-#randomly between male and female names
+#randomly between male and female names if gender is not male/female
 
 class Name():
 	def __init__(self, inName, inGender, finalRace):

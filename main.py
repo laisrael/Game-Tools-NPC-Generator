@@ -1,7 +1,5 @@
 import racegen, namegen, statgen, classgen, featgen, skillgen
 
-#Consolidate results and determine the final character
-
 class NPC():
 	def __init__(self):
 		#Inputs
