@@ -30,7 +30,16 @@ class NPC():
 		#Will allow for custom input in the future, for now fully randomizing
 		#characters to make development simpler
 
-		self.inLevel = int(input("What level is your NPC? "))
+		try:
+			self.inLevel = int(input("What level is your NPC? "))
+		except:
+			print("Please enter a positive integer")
+			self.get_inputs()
+
+		if self.inLevel < 1 or (self.inLevel // 1) != self.inlevel:
+			print("Please enter a positive integer")
+			self.get_inputs()
+
 		self.inRace = "rand"
 		self.inName = "rand"
 		self.inGender = "rand"
