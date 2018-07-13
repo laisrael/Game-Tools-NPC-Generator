@@ -36,7 +36,7 @@ class NPC():
 			print("Please enter a positive integer")
 			self.get_inputs()
 
-		if self.inLevel < 1 or (self.inLevel // 1) != self.inlevel:
+		if self.inLevel < 1 or (self.inLevel // 1) != self.inLevel:
 			print("Please enter a positive integer")
 			self.get_inputs()
 
